@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
         Toast.makeText(MainActivity.this,"这是Toast",Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this,"台式电脑",Toast.LENGTH_SHORT).show();
     }
 
     /**
