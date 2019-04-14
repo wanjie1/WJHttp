@@ -3,6 +3,7 @@ package com.example.wj.wjhttp;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -19,6 +20,7 @@ public class MainActivity extends Activity {
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
+        Toast.makeText(MainActivity.this,"这是Toast",Toast.LENGTH_SHORT).show();
     }
 
     /**
