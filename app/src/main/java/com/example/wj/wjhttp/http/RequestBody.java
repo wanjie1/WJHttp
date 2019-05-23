@@ -1,4 +1,4 @@
-package com.example.wj.wjhttp;
+package com.example.wj.wjhttp.http;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

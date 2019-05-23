@@ -1,7 +1,5 @@
 package com.example.wj.wjhttp.http;
 
-import com.example.wj.wjhttp.RequestBody;
-
 import java.util.Map;
 
 public class Request {
