@@ -28,6 +28,12 @@ public class HttpClient {
         return retryTimes;
     }
 
+    //生成一个网络请求Call对象实例
+    public Call newCall(Request request)
+    {
+        return new Call(this,request);
+    }
+
     private HttpClient(Builder builder)
     {
         this.dispatcher = builder.dispatcher;

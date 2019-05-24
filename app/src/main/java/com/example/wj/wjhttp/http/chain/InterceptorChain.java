@@ -11,7 +11,7 @@ public class InterceptorChain {
 
     private final List<Interceptor> interceptors ;
     private final int index;
-    private final Call call;
+    final Call call;
     private HttpConnection httpConnection = null;
 
     public InterceptorChain(List<Interceptor> interceptors,int index,Call call,HttpConnection httpConnection)

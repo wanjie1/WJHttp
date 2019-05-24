@@ -1,5 +1,6 @@
 package com.example.wj.wjhttp.http;
 
+import java.net.MalformedURLException;
 import java.util.Map;
 
 public class Request {
@@ -65,9 +66,13 @@ public class Request {
             return this;
         }
 
-        public Builder setHttpUrl(HttpUrl httpUrl)
+        public Builder setHttpUrl(String  url)
         {
-            this.httpUrl = httpUrl;
+            try {
+                this.httpUrl = new HttpUrl(url);
+            } catch (MalformedURLException e) {
+                throw new IllegalStateException("Http Url Format Error!",e);
+            }
             return this;
         }
 
