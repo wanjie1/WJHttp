@@ -23,6 +23,8 @@ public class RequestBody {
         return CHARSET;
     }
 
+
+
     public String getBody()
     {
         StringBuffer stringBuffer = new StringBuffer();
