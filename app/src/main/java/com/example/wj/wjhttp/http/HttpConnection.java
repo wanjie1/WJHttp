@@ -2,8 +2,6 @@ package com.example.wj.wjhttp.http;
 
 import android.text.TextUtils;
 
-import com.example.wj.wjhttp.HttpCodec;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -65,7 +63,7 @@ public class HttpConnection {
     /**
      *关闭socketed连接
      */
-    public void closed()
+    public void close()
     {
         if(null != socket)
         {

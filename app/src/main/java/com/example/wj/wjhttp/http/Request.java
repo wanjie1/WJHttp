@@ -9,6 +9,7 @@ public class Request {
     private String method; //请求方法，post、get
     private RequestBody requestBody;    //用于存储方法为post的参数
     private HttpUrl httpUrl;  //http的url信息
+
     private Request(Builder builder)
     {
         this.headers = builder.headers;

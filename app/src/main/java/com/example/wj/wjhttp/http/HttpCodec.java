@@ -1,9 +1,6 @@
-package com.example.wj.wjhttp;
+package com.example.wj.wjhttp.http;
 
 import android.text.TextUtils;
-
-import com.example.wj.wjhttp.http.Request;
-import com.example.wj.wjhttp.http.RequestBody;
 
 import java.io.IOException;
 import java.io.InputStream;

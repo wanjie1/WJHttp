@@ -13,6 +13,10 @@ public class RequestBody {
 
     Map<String,String> encodeBodys = new HashMap<>();
 
+    public int getContentLength(){
+        return getBody().getBytes().length;
+    }
+
     public String getContentType()
     {
         return CONTENT_TYPE;

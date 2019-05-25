@@ -11,6 +11,16 @@ public class Response {
     private String body;   //包的内容
     private boolean isKeepAlive;//是否保持连接
 
+    public Response(){}
+
+    public Response(int code, int contentLength, Map<String, String> headers, String body, boolean isKeepAlive) {
+        this.code = code;
+        this.contentLength = contentLength;
+        this.headers = headers;
+        this.body = body;
+        this.isKeepAlive = isKeepAlive;
+    }
+
 
     public int getCode() {
         return code;
