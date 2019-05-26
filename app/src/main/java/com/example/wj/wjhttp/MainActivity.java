@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.wj.wjhttp.http.Call;
 import com.example.wj.wjhttp.http.Callback;
 import com.example.wj.wjhttp.http.HttpClient;
 import com.example.wj.wjhttp.http.Request;
+import com.example.wj.wjhttp.http.RequestBody;
 import com.example.wj.wjhttp.http.Response;
 
 public class MainActivity extends Activity {
@@ -27,7 +29,35 @@ public class MainActivity extends Activity {
         TextView tv = (TextView) findViewById(R.id.sample_text);
         tv.setText(stringFromJNI());
 
-        HttpClient httpClient = new HttpClient.Builder().setRetryTimes(3).build();
+        HttpClient client;
+
+        client = new HttpClient.Builder()
+                .setRetryTimes(3)
+                .build();
+
+        RequestBody body = new RequestBody()
+                .add("key", "064a7778b8389441e30f91b8a60c9b23")
+                .add("city", "深圳");
+
+
+        Request request = new Request.Builder()
+                .setHttpUrl("http://restapi.amap.com/v3/weather/weatherInfo")
+                .post(body)
+                .build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, Throwable throwable) {
+                throwable.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) {
+                Log.e("响应体", response.getBody());
+                //Toast.makeText(MainActivity.this,response.getBody(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
+       /* HttpClient httpClient = new HttpClient.Builder().setRetryTimes(3).build();
 
         for(int i = 1;i<=5;i++)
         {
@@ -65,7 +95,7 @@ public class MainActivity extends Activity {
                     Log.d(TAG, response.getBody());
                 }
             });
-        }
+        }*/
     }
 
     /**

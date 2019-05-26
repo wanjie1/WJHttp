@@ -40,10 +40,6 @@ public class Call {
         this.httpClient = httpClient;
         this.request = request;
     }
-
-
-
-
     public Response getResponse() throws IOException
     {
         /*Response response = new Response();

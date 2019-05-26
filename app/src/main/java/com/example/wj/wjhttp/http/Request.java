@@ -1,6 +1,7 @@
 package com.example.wj.wjhttp.http;
 
 import java.net.MalformedURLException;
+import java.util.HashMap;
 import java.util.Map;
 
 public class Request {
@@ -37,7 +38,7 @@ public class Request {
 
     public static final class Builder
     {
-        private Map<String,String> headers;  //用于设置http头部
+        private Map<String,String> headers = new HashMap<>();;  //用于设置http头部
         private String method = null; //请求方法，post、get
         private RequestBody requestBody;    //用于存储方法为post的参数
         private HttpUrl httpUrl = null;  //http的url信息

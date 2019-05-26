@@ -1,6 +1,8 @@
 package com.example.wj.wjhttp.http;
 
 import com.example.wj.wjhttp.http.chain.Interceptor;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class HttpClient {
@@ -45,7 +47,7 @@ public class HttpClient {
     public static final class Builder
     {
         private Dispatcher dispatcher;
-        private List<Interceptor> interceptors;
+        private List<Interceptor> interceptors = new ArrayList<>();
         private ConnectionPool connectionPool;
         private int retryTimes;
 

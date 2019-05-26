@@ -49,7 +49,7 @@ public class RequestBody {
     public RequestBody add(String key,String value)
     {
         try {
-            encodeBodys.put(URLEncoder.encode(CHARSET,key),URLEncoder.encode(CHARSET,value));
+            encodeBodys.put(URLEncoder.encode(key,CHARSET),URLEncoder.encode(value,CHARSET));
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
